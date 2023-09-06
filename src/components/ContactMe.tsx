@@ -41,6 +41,14 @@ function ContactMe() {
 		}
 	},[state.succeeded])
 
+	useEffect(() => {
+	  if (state.errors) {
+	    console.error("Form submission error:", state.errors);
+	  }
+
+	  setIsSubmitting(false)
+	}, [state.errors]);
+
 	function handleClose(event: React.SyntheticEvent | Event, reason?: string){
 		if (reason === 'clickaway') {
 			return;
@@ -68,6 +76,7 @@ function ContactMe() {
 								name='fname'
 								value={formData.fname}
 								onChange={(e) => {setFormData({...formData, fname: e.target.value})}}
+								required
 							/>
 							<ValidationError 
 								prefix="Name" 
@@ -83,6 +92,7 @@ function ContactMe() {
 								name='email'
 								value={formData.email}
 								onChange={(e) => {setFormData({...formData, email: e.target.value})}}
+								required
 							/>
 							<ValidationError 
 								prefix="Email" 
@@ -98,6 +108,7 @@ function ContactMe() {
 								rows={8}
 								value={formData.message}
 								onChange={(e) => {setFormData({...formData, message: e.target.value})}}
+								required
 							/>
 							<ValidationError 
 								prefix="Message" 

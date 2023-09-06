@@ -174,7 +174,7 @@ function ThingsIUse() {
 										'
 									>
 										<Tooltip title={skill.title}>
-											{skill.icon}
+											<span>{skill.icon}</span>
 										</Tooltip>
 									</motion.li>
 								))}

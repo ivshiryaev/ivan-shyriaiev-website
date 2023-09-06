@@ -20,8 +20,12 @@ function AboutMe() {
 					Interested in Programming, English Language and music.<br/>
 					In my spare time i usually coding or doing gymnastics.</p>
 					<div className='flex gap-4 flex-wrap'>
-						<Button>Download CV</Button>
-						<Button>Open CV</Button>
+						<a href="/CV.pdf" download>
+							<Button>Download CV</Button>
+						</a>
+						<a href="/CV.pdf" target='_blank'>
+							<Button>Open CV</Button>
+						</a>
 					</div>
 				</div>
 				<div className='order-first md:order-last relative w-full md:w-2/5 h-[300px] md:h-[500px]'>
