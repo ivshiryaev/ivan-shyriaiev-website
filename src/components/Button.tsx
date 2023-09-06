@@ -6,10 +6,11 @@ type ButtonProps = {
 	type?: 'button' | 'submit' | 'reset',
 	onClick?: () => void,
 	className?: string,
+	disabled?: boolean,
 	children: React.ReactNode,
 }
 
-function Button({children, className, onClick, type} : ButtonProps) {
+function Button({children, className, onClick, type, disabled} : ButtonProps) {
 	return (
 		<button
 			type={type}

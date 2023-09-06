@@ -14,17 +14,17 @@ function AboutMe() {
 					md:flex-row
 				'
 			>
-				<div className='w-full md:w-3/5 h-full p-8 flex flex-col gap-4'>
+				<div className='order-last md:order-first w-full md:w-3/5 h-full p-8 flex flex-col gap-4'>
 					<p>I am 23 years old.<br/>
 					Based in Gdańsk, Poland.<br/><br/>
 					Interested in Programming, English Language and music.<br/>
 					In my spare time i usually coding or doing gymnastics.</p>
-					<div className='flex gap-4'>
+					<div className='flex gap-4 flex-wrap'>
 						<Button>Download CV</Button>
 						<Button>Open CV</Button>
 					</div>
 				</div>
-				<div className='relative w-full md:w-2/5 h-[500px]'>
+				<div className='order-first md:order-last relative w-full md:w-2/5 h-[300px] md:h-[500px]'>
 					<Image 
 						className='pointer-events-none absolute w-full h-full object-cover'
 						src='/images/me.jpg' 
