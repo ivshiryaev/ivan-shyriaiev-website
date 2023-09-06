@@ -56,12 +56,11 @@ const listItemVariants = {
 
 interface Skill {
 	title: string,
-	icon: JSX.element,
+	icon: JSX.Element,
 }
 
 interface Object {
 	title: string,
-	description: string,
 	skills: Skill[],
 }
 
@@ -143,9 +142,8 @@ function ThingsIUse() {
 				exit='hidden'
 			>
 				{ data.map((item, index) => (
-					<motion.div variants={cardVariants}>
+					<motion.div variants={cardVariants} key={index}>
 						<Card
-							key={index}
 							className='
 								w-full flex flex-col gap-2
 							' 

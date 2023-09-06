@@ -1,10 +1,17 @@
 "use client"
+import React from 'react'
 
 import { motion } from 'framer-motion'
 
 import { plumpfullFont } from '@/app/fonts'
 
-function Section({children, className, heading}) {
+type SectionProps ={
+	heading?: string,
+	className?: string,
+	children: React.ReactNode,
+}
+
+function Section({children, className, heading} : SectionProps) {
 	return (
 		<motion.section 
 			className={`

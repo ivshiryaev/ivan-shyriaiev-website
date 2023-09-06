@@ -34,10 +34,9 @@ function ContactMe() {
 							className='
 								bg-background shadow-neumorphism-inset w-full rounded-[1.125rem] p-4
 							' 
-							type="text"
 							placeholder='Text...'
 							name='text'
-							rows='8'
+							rows={8}
 						/>
 						<div className='flex justify-center'>
 							<Button className='w-min'>Send</Button>

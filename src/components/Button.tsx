@@ -1,6 +1,15 @@
 import { plumpfullFont } from '@/app/fonts'
 
-function Button({children, className, onClick, type}) {
+import React from 'react'
+
+type ButtonProps = {
+	type?: 'button' | 'submit' | 'reset',
+	onClick?: () => void,
+	className?: string,
+	children: React.ReactNode,
+}
+
+function Button({children, className, onClick, type} : ButtonProps) {
 	return (
 		<button
 			type={type}

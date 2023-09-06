@@ -1,8 +1,15 @@
 "use client"
 
+import React from 'react'
+
+type CardProps = {
+	className?: string,
+	children: React.ReactNode,
+}
+
 import { motion } from 'framer-motion'
 
-function Card({children, className}) {
+function Card({children, className} : CardProps) {
 	return (
 		<motion.div
 			className={`

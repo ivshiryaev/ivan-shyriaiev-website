@@ -20,7 +20,9 @@ function Hero() {
 						alt='Kupaz E-commerce store'
 					/>
 				</div>
-				<p className={`text-5xl drop-shadow-2xl ${plumpfullFont.className}`}>Hi, i'm Ivan</p>
+				<p className={`text-5xl drop-shadow-2xl ${plumpfullFont.className}`}>
+					Hi, i&apos;m Ivan
+				</p>
 				<div className='w-[240px] grid'>
 					<p className='text-3xl'>Full stack</p>
 					<p className='text-3xl justify-self-end'>Developer</p>
