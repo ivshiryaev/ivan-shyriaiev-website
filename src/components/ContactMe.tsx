@@ -2,17 +2,25 @@ import Section from '@/components/Section'
 import Card from '@/components/Card'
 import Button from '@/components/Button'
 import { BsGithub, BsLinkedin } from 'react-icons/bs'
+import { useForm, ValidationError } from "@formspree/react";
+
+import { useState } from 'react'
 
 import Tooltip from '@mui/material/Tooltip';
 
 function ContactMe() {
+	const [state, handleSubmit] = useForm("mqkvbyra");
+	if (state.succeeded) {
+		return <p>Received your message, i'll reply soon!</p>;
+	}
+
 	return (
 		<Section heading='Contact me'>
 			<div className='flex md:flex-row gap-4 w-full'>
 				<Card className='w-full'>
 					<form 
 						className='flex flex-col gap-4 text-dark'
-						action=""
+						onSubmit={handleSubmit}
 					>
 						<input 
 							className='
