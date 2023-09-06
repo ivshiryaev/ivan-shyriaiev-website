@@ -7,3 +7,4 @@ Things i used:
 - [Tailwind](https://tailwindcss.com/)
 - [Framer-Motion](https://www.framer.com/motion/)
 - [MUI](https://mui.com/) (for tooltip and snackbar at the left bottom)
+- [Formspree](https://formspree.io/) handling form submissions
