@@ -2,6 +2,7 @@ import Section from './Section'
 import Image from 'next/image'
 import { plumpfullFont } from '@/app/fonts'
 
+
 function Hero() {
 	return (
 		<Section 
