@@ -27,7 +27,7 @@ function Projects() {
 					md:gap-8
 				'
 			>
-				{projects && projects.length < 0 && projects.map((project,index) => (
+				{projects && projects.length > 0 && projects.map((project,index) => (
 					<Card 
 						key={index}
 						className={`
