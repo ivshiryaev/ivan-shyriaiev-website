@@ -1,11 +1,9 @@
-import Section from './Section'
 import Image from 'next/image'
 import { plumpfullFont } from '@/app/fonts'
 
-
 function Hero() {
 	return (
-		<Section 
+		<section 
 			className='
 				flex justify-center items-center
 				min-h-screen
@@ -29,7 +27,7 @@ function Hero() {
 					<p className='text-3xl justify-self-end'>Developer</p>
 				</div>
 			</div>
-		</Section>
+		</section>
 	)
 }
 

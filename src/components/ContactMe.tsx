@@ -129,6 +129,12 @@ function ContactMe() {
 									)}
 								</Button>
 							</div>
+							{isSubmitting && (
+								<>
+									<p className='text-sm'>Man, you created a Threads app and don&apos;t implemented simple form validation here ?! lol what 🤐</p>
+									<p className='text-sm'>Uh oh, sorry ... I promise, i&apos;ll fix this 😅</p>
+								</>
+							)}
 						</form>
 					</Card>
 					<Card className='w-full h-min shadow-neumorphism-inset flex flex-col justify-center items-center gap-4 text-center'>

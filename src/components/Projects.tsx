@@ -4,74 +4,13 @@ import Card from '@/components/Card'
 import { plumpfullFont } from '@/app/fonts'
 import Button from '@/components/Button'
 import Image from 'next/image'
+import { projects } from '@/constants'
 
-interface MyButton {
-	title : string,
-	href : string,
-}
-
-interface Object {
-	title: string,
-	description: string,
-	website: string,
-	imageSrc: string,
-	imageWidth: number,
-	imageHeight: number,
-	buttons: MyButton[],
-}
-
-const projects : Object[] = [
-	{
-		title: 'E-commerce store',
-		description:`Implemented:
-
-		- Stripe API
-		- Shopping Cart
-		- Netlify serverless functions
-		- Contact form submissions
-
-		Design made in Figma. Photos are compressed in Photoshop. Stripe Payments integrated with Netlify serverless functions.Because there is not much data about products (only 16 products) i decided to store all the data in single .json file instead of relying on database`,
-		website: 'https://kupaz.pl',
-		imageSrc: '/images/kupaz.jpg',
-		imageWidth: 1334,
-		imageHeight: 2000,
-		buttons: [
-			{
-				title:'Website',
-				href:'https://kupaz.pl',
-			},
-			{
-				title:'Github',
-				href:'https://github.com/ivshiryaev/kupaz',
-			},
-		],
-	},
-	{
-		title: 'Landing page',
-		description:`Landing page for body psychologist.
-
-		Things i used:
-
-		- Bootstrap
-		- HTML
-		- JS
-		`,
-		website: 'https://karinavlasenko.com',
-		imageSrc: '/images/karinaVlasenko.jpg',
-		imageWidth: 1179,
-		imageHeight: 2074,
-		buttons: [
-			{
-				title:'Website',
-				href:'https://karinavlasenko.com',
-			},
-			{
-				title:'Github',
-				href:'https://github.com/ivshiryaev/Karina-Vlasenko---Website',
-			},
-		],
-	}
-]
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import Typography from '@mui/material/Typography';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 function Projects() {
 	return (
@@ -88,15 +27,15 @@ function Projects() {
 					md:gap-8
 				'
 			>
-				{projects.map((project,index) => (
+				{projects && projects.length < 0 && projects.map((project,index) => (
 					<Card 
 						key={index}
-						className='
+						className={`
 							!p-0 h-min
 							flex flex-col
 							md:h-full
 							md:flex-row md:justify-center md:items-center
-						'
+						`}
 					>
 						<div 
 							className='
@@ -108,10 +47,10 @@ function Projects() {
 						>
 							<Image 
 								className='pointer-events-none absolute w-full h-full object-cover'
-								src={project.imageSrc}
+								src={project.imageSrc || ''}
 								width={project.imageWidth}
 								height={project.imageHeight}
-								alt={project.website}
+								alt={project.website || ''}
 							/>
 						</div>
 						<div 
@@ -130,12 +69,12 @@ function Projects() {
 								</a>
 							</div>
 							<p>
-								{project.description.split('\n').map((line, idx) => 
+		            {project.description && project.description.split('\n').map((line, idx) => 
 									(<React.Fragment key={idx}>{line}<br/></React.Fragment>)
 								)}
 							</p>
 							<div className='w-full flex flex-wrap gap-3'>
-								{project.buttons.map((button,index)=> (
+								{project.buttons && project.buttons.map((button,index)=> (
 									<a href={button.href} target='_blank' key={index}>
 										<Button className='shrink-0'>{button.title}</Button>
 									</a>
