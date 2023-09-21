@@ -100,4 +100,6 @@ const aboutMe = `I am 23 years old.
 	Interested in Programming, English Language and music.
 	In my spare time i usually coding or doing gymnastics.`
 
-export { projects, aboutMe }
+const formSpreeUrl = 'https://formspree.io/f/mqkvbyra'
+
+export { projects, aboutMe, formSpreeUrl }

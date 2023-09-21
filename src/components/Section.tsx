@@ -26,7 +26,7 @@ function Section({
 	heading,
 } : SectionProps) {
 
-	const Tag = headingTags[type] || 'p'
+	const Tag:any = headingTags[type] || 'p'
 
 	return (
 		<section 

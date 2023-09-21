@@ -8,7 +8,6 @@ import * as z from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm, SubmitHandler } from "react-hook-form"
 import { FormValidation, FormSchema } from '@/lib/validations/FormValidation'
-import { useForm as useFormspreeForm, handleSubmit as handleFormSpreeSubmit} from '@formspree/react'
 
 import Section from '@/components/Section'
 import Card from '@/components/Card'
@@ -19,7 +18,7 @@ import { MdDone } from 'react-icons/md'
 import { BiLoaderAlt } from 'react-icons/bi'
 
 import Tooltip from '@mui/material/Tooltip';
-const formSpreeUrl = 'https://formspree.io/f/mqkvbyra'
+import { formSpreeUrl } from '@/constants'
 
 function ContactMe() {
 	const [isSubmitting, setIsSubmitting] = useState(false)
@@ -83,7 +82,6 @@ function ContactMe() {
 									bg-background shadow-neumorphism-inset w-full rounded-[1.125rem] p-4
 								' 
 								type="text"
-								name="name"
 								placeholder='Name...'
 								{...register('name')}
 							/>
@@ -93,7 +91,6 @@ function ContactMe() {
 									bg-background shadow-neumorphism-inset w-full rounded-[1.125rem] p-4
 								' 
 								type="email"
-								name="email"
 								placeholder='Email...'
 								{...register('email')}
 							/>
@@ -103,7 +100,6 @@ function ContactMe() {
 									bg-background shadow-neumorphism-inset w-full rounded-[1.125rem] p-4
 								' 
 								placeholder='Message...'
-								name="message"
 								rows={8}
 								{...register('message')}
 							/>

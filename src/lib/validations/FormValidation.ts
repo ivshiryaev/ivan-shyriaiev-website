@@ -17,4 +17,5 @@ const FormSchema = z.object({
 
 type FormValidation = z.infer<typeof FormSchema>
 
-export { FormValidation, FormSchema }
+export type { FormValidation } 
+export { FormSchema }
