@@ -1,19 +1,35 @@
-"use client"
 import React from 'react'
-
-import { motion } from 'framer-motion'
 
 import { plumpfullFont } from '@/app/fonts'
 
-type SectionProps ={
+interface SectionProps {
+	type: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p',
 	heading?: string,
 	className?: string,
-	children: React.ReactNode,
+	children?: React.ReactNode,
 }
 
-function Section({children, className, heading} : SectionProps) {
+const headingTags: Record<string, string> = {
+	h1: 'h1',
+	h2: 'h2',
+	h3: 'h3',
+	h4: 'h4',
+	h5: 'h5',
+	h6: 'h6',
+	p: 'p',
+};
+
+function Section({
+	type, 
+	children, 
+	className, 
+	heading,
+} : SectionProps) {
+
+	const Tag = headingTags[type] || 'p'
+
 	return (
-		<motion.section 
+		<section 
 			className={`
 				px-4
 				flex flex-col gap-4
@@ -21,21 +37,12 @@ function Section({children, className, heading} : SectionProps) {
 				md:gap-8
 				${className && className}
 			`}
-			initial={{
-				opacity:0
-			}}
-			whileInView={{
-				opacity:1
-			}}
-			exit={{
-				opacity:0
-			}}
 		>
 			{heading && 
-				<p className={`text-3xl ${plumpfullFont.className}`}>{heading}</p>
+				<Tag className={`text-3xl ${plumpfullFont.className}`}>{heading}</Tag>
 			}
 			{children}
-		</motion.section>
+		</section>
 	)
 }
 

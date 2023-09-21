@@ -14,7 +14,11 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 function Projects() {
 	return (
-		<Section heading='My Projects' className='!overflow-visible !gap-0 !p-0'>
+		<Section 
+			heading='My Projects' 
+			className='!overflow-visible !gap-0 !p-0'
+			type='h2'
+		>
 			<div 
 				className='
 					px-4 py-8 

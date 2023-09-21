@@ -1,13 +1,14 @@
 import Section from '@/components/Section'
 import Card from '@/components/Card'
 import Image from 'next/image'
+import Link from 'next/link'
 import Button from '@/components/Button'
 import { aboutMe } from '@/constants'
 import React from 'react'
 
 function AboutMe() {
 	return (
-		<Section heading='About me'>
+		<Section heading='About me' type='h3'>
 			<Card 
 				className='
 					w-full !p-0
@@ -20,6 +21,10 @@ function AboutMe() {
 		            {aboutMe && aboutMe.split('\n').map((line, idx) => 
 						(<React.Fragment key={idx}>{line}<br/></React.Fragment>)
 					)}
+					<div className='text-[12px] flex flex-col opacity-50'>
+						<Link href='https://github.com/ivshiryaev/cockroach-simulator/'>cockroach simulator</Link>
+						<Link href='https://github.com/ivshiryaev/simple-3d-game-bouncing-ball/'>3d bounce game</Link>
+					</div>
 					<div className='flex gap-4 flex-wrap'>
 						<a href="/CV.pdf" download>
 							<Button>Download CV</Button>

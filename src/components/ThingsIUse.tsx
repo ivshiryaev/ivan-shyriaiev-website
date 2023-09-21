@@ -1,6 +1,3 @@
-"use client"
-import { motion } from 'framer-motion'
-
 import Section from '@/components/Section'
 import Card from '@/components/Card'
 import { plumpfullFont } from '@/app/fonts'
@@ -12,48 +9,6 @@ import { BiLogoTailwindCss, BiLogoTypescript, BiLogoBootstrap, BiLogoNodejs, BiL
 import { SiExpress, SiFigma, SiAdobephotoshop, SiNextdotjs } from 'react-icons/si'
 import { BsGit } from 'react-icons/bs'
 import { SiJira } from 'react-icons/si'
-
-const cardWrapperVariants = {
-	visible: { 
-		opacity: 1,
-		transition: {
-			when:'beforeChildren',
-			staggerChildren: 0.1,
-		},
-	},
-	hidden: { 
-		opacity: 0,
-		transition: {
-			when: 'afterChildren',
-		},
-	},
-}
-
-const cardVariants = {
-	visible: { opacity: 1, y: 0 },
-	hidden: { opacity: 0, y: -100 },
-}
-
-const listVariants = {
-	visible: { 
-		opacity: 1,
-		transition: {
-			when:'beforeChildren',
-			staggerChildren: 0.1,
-		},
-	},
-	hidden: { 
-		opacity: 0,
-		transition: {
-			when: 'afterChildren',
-		},
-	},
-}
-
-const listItemVariants = {
-	visible: { opacity: 1, y: 0 },
-	hidden: { opacity: 0, y: -100 },
-}
 
 interface Skill {
 	title: string,
@@ -142,16 +97,12 @@ const data : Object[] = [
 
 function ThingsIUse() {
 	return (
-		<Section heading='Tech stack'>
-			<motion.div 
+		<Section heading='Tech stack' type='h4'>
+			<div 
 				className='w-full grid grid-cols-1 md:grid-cols-2 gap-4'
-				variants={cardWrapperVariants}
-				initial='hidden'
-				whileInView='visible'
-				exit='hidden'
 			>
 				{ data.map((item, index) => (
-					<motion.div variants={cardVariants} key={index}>
+					<div key={index}>
 						<Card
 							className='
 								w-full flex flex-col gap-2
@@ -160,17 +111,12 @@ function ThingsIUse() {
 							<p className={`text-xl`}>
 								{item.title}
 							</p>
-							<motion.ul 
+							<ul 
 								className='flex gap-2 flex-wrap'
-								variants={listVariants}
-								initial='hidden'
-								whileInView='visible'
-								exit='hidden'
 							>
 								{item.skills.map((skill,index) => (
-									<motion.li 
+									<li 
 										key={index}
-										variants={listItemVariants}
 										className='
 											p-2
 											text-5xl 
@@ -185,13 +131,13 @@ function ThingsIUse() {
 										<Tooltip title={skill.title}>
 											<span>{skill.icon}</span>
 										</Tooltip>
-									</motion.li>
+									</li>
 								))}
-							</motion.ul>
+							</ul>
 						</Card>
-					</motion.div>
+					</div>
 				))}
-			</motion.div>
+			</div>
 		</Section>
 	)
 }
