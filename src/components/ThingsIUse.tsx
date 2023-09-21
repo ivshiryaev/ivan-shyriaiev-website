@@ -8,9 +8,10 @@ import { plumpfullFont } from '@/app/fonts'
 import Tooltip from '@mui/material/Tooltip';
 
 import { FaReact } from 'react-icons/fa'
-import { BiLogoTailwindCss, BiLogoTypescript, BiLogoBootstrap, BiLogoNodejs, BiLogoGithub } from 'react-icons/bi'
+import { BiLogoTailwindCss, BiLogoTypescript, BiLogoBootstrap, BiLogoNodejs, BiLogoGithub, BiLogoMongodb } from 'react-icons/bi'
 import { SiExpress, SiFigma, SiAdobephotoshop, SiNextdotjs } from 'react-icons/si'
 import { BsGit } from 'react-icons/bs'
+import { SiJira } from 'react-icons/si'
 
 const cardWrapperVariants = {
 	visible: { 
@@ -100,6 +101,10 @@ const data : Object[] = [
 			{
 				title:'Express',
 				icon:<SiExpress/>,
+			},
+			{
+				title:'MongoDB',
+				icon:<BiLogoMongodb/>,
 			}
 		]
 	},
@@ -126,6 +131,10 @@ const data : Object[] = [
 			{
 				title:'GitHub',
 				icon:<BiLogoGithub/>,
+			},
+			{
+				title:'Jira',
+				icon:<SiJira/>,
 			},
 		],
 	},

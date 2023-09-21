@@ -48,8 +48,7 @@ function Projects() {
 							<Image 
 								className='pointer-events-none absolute w-full h-full object-cover'
 								src={project.imageSrc || ''}
-								width={project.imageWidth}
-								height={project.imageHeight}
+								fill
 								alt={project.website || ''}
 							/>
 						</div>

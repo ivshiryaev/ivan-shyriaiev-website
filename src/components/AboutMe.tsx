@@ -2,6 +2,8 @@ import Section from '@/components/Section'
 import Card from '@/components/Card'
 import Image from 'next/image'
 import Button from '@/components/Button'
+import { aboutMe } from '@/constants'
+import React from 'react'
 
 function AboutMe() {
 	return (
@@ -15,10 +17,9 @@ function AboutMe() {
 				'
 			>
 				<div className='order-last md:order-first w-full md:w-3/5 h-full p-8 flex flex-col gap-4'>
-					<p>I am 23 years old.<br/>
-					Based in Gdańsk, Poland.<br/><br/>
-					Interested in Programming, English Language and music.<br/>
-					In my spare time i usually coding or doing gymnastics.</p>
+		            {aboutMe && aboutMe.split('\n').map((line, idx) => 
+						(<React.Fragment key={idx}>{line}<br/></React.Fragment>)
+					)}
 					<div className='flex gap-4 flex-wrap'>
 						<a href="/CV.pdf" download>
 							<Button>Download CV</Button>

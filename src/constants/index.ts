@@ -91,4 +91,9 @@ const projects : ProjectInterface[] = [
 	},
 ]
 
-export { projects }
+const aboutMe = `I am 23 years old.
+	Based in Gdańsk, Poland.
+	Interested in Programming, English Language and music.
+	In my spare time i usually coding or doing gymnastics.`
+
+export { projects, aboutMe }
