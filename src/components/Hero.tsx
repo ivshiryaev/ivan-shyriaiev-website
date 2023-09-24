@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import { plumpfullFont } from '@/app/fonts'
 
 function Hero() {
 	return (
@@ -19,7 +18,7 @@ function Hero() {
 						alt='Kupaz E-commerce store'
 					/>
 				</div>
-				<h1 className={`text-5xl drop-shadow-2xl ${plumpfullFont.className}`}>
+				<h1 className={`text-5xl drop-shadow-2xl`}>
 					Hi, i&apos;m Ivan
 				</h1>
 				<div className='w-[240px] grid'>

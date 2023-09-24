@@ -9,11 +9,16 @@ const config: Config = {
   theme: {
     extend: {
       colors:{
+        whiteText:'#F0F0F0',
         background:'#F6F6F6',
         gray:'#717171',
-        textPrimary:'#232323',
+        darkText:'#232323',
         darkBackground:'#242424',
-        darkTextPrimary:'#F0F0F0',
+        yellow:'#FEFE35',
+        purple:'#AF2EEC',
+        green:'#2FD6AE',
+        blue:'#2F86D6',
+        raspberry:'#C51A80',
       },
       boxShadow:{
         'neumorphism-flat': '4px 4px 10px 0px #DDD, -4px -4px 10px 0px #FFF',

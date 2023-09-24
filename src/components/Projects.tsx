@@ -1,7 +1,6 @@
 import React from 'react'
 import Section from '@/components/Section'
 import Card from '@/components/Card'
-import { plumpfullFont } from '@/app/fonts'
 import Button from '@/components/Button'
 import Image from 'next/image'
 import { projects } from '@/constants'
@@ -66,7 +65,7 @@ function Projects() {
 							'
 						>
 							<div className='flex flex-col'>
-								<p className={`text-xl ${plumpfullFont.className}`}>{project.title}</p>
+								<p className={`text-xl`}>{project.title}</p>
 								<a target='_blank' href={project.website} className='hover:underline text-gray'>
 									{project.website}
 								</a>

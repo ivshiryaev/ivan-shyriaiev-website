@@ -10,7 +10,6 @@ export default function Home() {
         <main 
             className={`
                 flex flex-col justify-center
-                gap-32
             `}
         >
             <Hero/>

@@ -1,7 +1,5 @@
 "use client"
 
-import { plumpfullFont } from '@/app/fonts'
-
 import React from 'react'
 
 type ButtonProps = {
@@ -24,7 +22,6 @@ function Button({children, className, onClick, type, disabled} : ButtonProps) {
 				active:shadow-neumorphism-inset
 				active:bg-concave
 				hover:bg-concave
-				${plumpfullFont.className}
 				${className && className}
 			`}
 		>

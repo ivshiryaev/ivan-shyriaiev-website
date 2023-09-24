@@ -1,7 +1,5 @@
 import React from 'react'
 
-import { plumpfullFont } from '@/app/fonts'
-
 interface SectionProps {
 	type: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p',
 	heading?: string,
@@ -39,7 +37,7 @@ function Section({
 			`}
 		>
 			{heading && 
-				<Tag className={`text-3xl ${plumpfullFont.className}`}>{heading}</Tag>
+				<Tag className={`text-3xl`}>{heading}</Tag>
 			}
 			{children}
 		</section>

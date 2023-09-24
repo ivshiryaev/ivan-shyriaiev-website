@@ -1,6 +1,5 @@
 import Section from '@/components/Section'
 import Card from '@/components/Card'
-import { plumpfullFont } from '@/app/fonts'
 
 import Tooltip from '@mui/material/Tooltip';
 

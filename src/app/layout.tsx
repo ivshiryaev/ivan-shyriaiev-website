@@ -1,10 +1,15 @@
 import './globals.css'
 
-import { varelaRoundFont } from './fonts'
+import localFont from 'next/font/local'
+export const sequelFont = localFont({
+  src: './sequel.ttf',
+  display: 'swap',
+})
+
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Ivan Shyriaiev. Full stack developer',
+  title: 'Ivan Shyriaiev.',
   description: 'Full stack developer.',
 }
 
@@ -21,7 +26,7 @@ export default function RootLayout({
                 container mx-auto
                 min-h-screen
                 bg-background
-                ${varelaRoundFont.className}
+                ${sequelFont.className}
             `}
         >
             {children}
