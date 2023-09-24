@@ -16,12 +16,10 @@ function Button({children, className, onClick, type, disabled} : ButtonProps) {
 			type={type}
 			onClick={onClick}
 			className={`
-				px-8 py-4
-				rounded-[2.25rem]
-				shadow-neumorphism-flat
-				active:shadow-neumorphism-inset
-				active:bg-concave
-				hover:bg-concave
+				px-12 py-[36px]
+				rounded-[48px]
+				outline outline-2 outline-whiteText
+				flex justify-center items-center
 				${className && className}
 			`}
 		>

@@ -42,20 +42,20 @@ function ContactMe() {
 	const processSubmit: SubmitHandler<FormValidation> = async (data) => {
 		setIsSubmitting(true)
 
-		const response = await fetch(formSpreeUrl, {
-			method: 'POST',
-			body: JSON.stringify(data),
-			headers: {
-				'Accept': 'application/json',
-			},
-		})
+		// const response = await fetch(formSpreeUrl, {
+		// 	method: 'POST',
+		// 	body: JSON.stringify(data),
+		// 	headers: {
+		// 		'Accept': 'application/json',
+		// 	},
+		// })
 
-		if(response.ok){
-			reset()
-			setSnackbarOpen(true)
-		} else {
-			alert('Oops, there is something wrong happened 🤷‍')
-		}
+		// if(response.ok){
+		// 	reset()
+		// 	setSnackbarOpen(true)
+		// } else {
+		// 	alert('Oops, there is something wrong happened 🤷‍')
+		// }
 
 		setIsSubmitting(false)
 	}
@@ -70,80 +70,59 @@ function ContactMe() {
 
 	return (
 		<>
-			<Section heading='Contact me' type='h5'>
-				<div className='flex flex-col md:flex-row gap-4 w-full'>
-					<Card className='w-full'>
-						<form 
-							className='flex flex-col gap-4 text-dark'
-							onSubmit={handleSubmit(processSubmit)}
-						>
-							<input 
-								className='
-									bg-background shadow-neumorphism-inset w-full rounded-[1.125rem] p-4
-								' 
-								type="text"
-								placeholder='Name...'
-								{...register('name')}
-							/>
-							{errors?.name?.message && <p className='text-sm text-rose-500'>{errors.name?.message}</p>}
-							<input 
-								className='
-									bg-background shadow-neumorphism-inset w-full rounded-[1.125rem] p-4
-								' 
-								type="email"
-								placeholder='Email...'
-								{...register('email')}
-							/>
-							{errors?.email?.message && <p className='text-sm text-rose-500'>{errors.email?.message}</p>}
-							<textarea 
-								className='
-									bg-background shadow-neumorphism-inset w-full rounded-[1.125rem] p-4
-								' 
-								placeholder='Message...'
-								rows={8}
-								{...register('message')}
-							/>
-							{errors?.message?.message && <p className='text-sm text-rose-500'>{errors.message?.message}</p>}
-							<div className='flex justify-center'>
-								<Button className='disabled:opacity-50' type='submit' disabled={isSubmitting}>
-									{isSubmitting ? (
-										<span className='flex gap-2 justify-center items-center'>
-											<span className='animate-spin'><BiLoaderAlt/></span>
-											<span>Wait a sec...</span>
-										</span>
-									) : (
-										<>
-											Send
-										</>
-									)}
-								</Button>
+			<Section>
+				<form 
+					className='flex justify-between items-between gap-4 text-dark'
+					onSubmit={handleSubmit(  processSubmit)}
+				>
+					<div className='flex grow flex-col gap-4'>
+						<div className='flex gap-4'>
+							<div className='w-full flex flex-col gap-1'>
+								<input 
+									className='
+										bg-gray w-full rounded-[48px] p-12
+									' 
+									type="text"
+									placeholder='Name...'
+									{...register('name')}
+								/>
+								{errors?.name?.message && <p className='text-sm text-rose-500'>{errors.name?.message}</p>}
 							</div>
-						</form>
-					</Card>
-					<Card className='w-full h-min shadow-neumorphism-inset flex flex-col justify-center items-center gap-4 text-center'>
-						<Link href='mailto:ivshiryaev1999@gmail.com'>ivshiryaev1999@gmail.com</Link>
-						<div className='flex gap-4 text-4xl'>
-						<Tooltip title='Github'>	
-							<a 
-								href='https://github.com/ivshiryaev' 
-								className='cursor-pointer p-4 hover:bg-concave active:shadow-neumorphism-inset active:scale-[0.9] bg-convex rounded-full'
-								target='_blank'
-							>
-									<BsGithub/>
-							</a>
-						</Tooltip>
-						<Tooltip title='LinkedIn'>	
-							<a 
-								href='https://www.linkedin.com/in/theshirya/' 
-								className='cursor-pointer p-4 hover:bg-concave active:shadow-neumorphism-inset active:scale-[0.9] bg-convex rounded-full'
-								target='_blank'
-							>
-								<BsLinkedin/>
-							</a>
-						</Tooltip>
+							<div className='w-full flex flex-col gap-1'>
+								<input 
+									className='
+										bg-gray w-full rounded-[48px] p-12
+									' 
+									type="email"
+									placeholder='Email...'
+									{...register('email')}
+								/>
+								{errors?.email?.message && <p className='text-sm text-rose-500'>{errors.email?.message}</p>}
+							</div>
 						</div>
-					</Card>
-				</div>
+						<textarea 
+							className='
+								bg-gray w-full rounded-[48px] p-12
+							' 
+							placeholder='Message...'
+							rows={8}
+							{...register('message')}
+						/>
+						{errors?.message?.message && <p className='text-sm text-rose-500'>{errors.message?.message}</p>}
+					</div>
+					<Button className='flex-auto !outline-none bg-yellow disabled:opacity-50' type='submit' disabled={isSubmitting}>
+						{isSubmitting ? (
+							<span className='flex gap-2 justify-center items-center'>
+								<span className='animate-spin'><BiLoaderAlt/></span>
+								<span>Wait a sec...</span>
+							</span>
+						) : (
+							<span className='text-darkText text-[24px] uppercase'>
+								Send
+							</span>
+						)}
+					</Button>
+				</form>
 			</Section>
 			<Snackbar 
 				open={snackbarOpen} 

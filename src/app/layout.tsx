@@ -22,10 +22,10 @@ export default function RootLayout({
     <html lang="en">
         <body 
             className={`
-                text-textPrimary
-                container mx-auto
+                leading-none
+                text-whiteText
                 min-h-screen
-                bg-background
+                bg-darkText
                 ${sequelFont.className}
             `}
         >

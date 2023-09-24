@@ -13,9 +13,9 @@ export default function Home() {
             `}
         >
             <Hero/>
+            <AboutMe/>
             <Projects/>
             <ThingsIUse/>
-            <AboutMe/>
             <ContactMe/>
             <Footer/>
         </main>

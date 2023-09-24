@@ -29,10 +29,8 @@ function Section({
 	return (
 		<section 
 			className={`
-				px-4
-				flex flex-col gap-4
+				lg:px-4 lg:py-2
 				justify-center items-center
-				md:gap-8
 				${className && className}
 			`}
 		>
