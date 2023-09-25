@@ -1,31 +1,45 @@
 import './globals.css'
 
-import { varelaRoundFont } from './fonts'
+import localFont from 'next/font/local'
+
+// @ts-ignore
+const sequelFont = localFont({
+  src: './sequel.ttf',
+  display: 'swap',
+})
+
 import type { Metadata } from 'next'
+import Providers from './Providers'
 
 export const metadata: Metadata = {
-  title: 'Ivan Shyriaiev. Full stack developer',
+  title: 'Ivan Shyriaiev.',
   description: 'Full stack developer.',
 }
 
-export default function RootLayout({
+function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-        <body 
-            className={`
-                text-textPrimary
-                container mx-auto
-                min-h-screen
-                bg-background
-                ${varelaRoundFont.className}
-            `}
+    <>
+      <html lang="en" suppressHydrationWarning>
+        <body className={`
+            dark:bg-black
+            leading-none
+            text-whiteText
+            min-h-screen
+            bg-darkText
+            ${sequelFont.className}
+          `}
         >
+          <Providers>
             {children}
+          </Providers>
         </body>
-    </html>
+      </html>
+    </>
   )
 }
+
+export default RootLayout

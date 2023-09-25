@@ -1,19 +1,20 @@
 interface ProjectInterface {
-	title?: string,
-	description?: string,
-	website?: string,
-	imageSrc?: string,
-	imageWidth?: number,
-	imageHeight?: number,
-	buttons?: {
-		title: string,
-		href: string,
-	}[],
+	number: number,
+	title: string,
+	subtitle: string,
+	description: string,
+	website: string,
+	imageSrc: string,
+	imageWidth: number,
+	imageHeight: number,
+	githubLink: string,
 }
 
 const projects : ProjectInterface[] = [
 	{
+		number:3,
 		title: 'Threads app',
+		subtitle: 'Social network app',
 		description:`Social media app where you can create, comment, like threads, search for new friends and create communities 🤗
 
 		(there is a 2-3 seconds delay after you perorm any action such as like search, etc... wait plz, this is a cons of free hosting on vercel 😥)
@@ -28,19 +29,12 @@ const projects : ProjectInterface[] = [
 		imageSrc: '/images/threads.jpg',
 		imageWidth: 1334,
 		imageHeight: 2000,
-		buttons: [
-			{
-				title:'Website',
-				href:'https://threads-ivshiryaev.vercel.app/',
-			},
-			{
-				title:'Github',
-				href:'https://github.com/ivshiryaev/threads',
-			},
-		],
+		githubLink: 'https://github.com/ivshiryaev/threads',
 	},
 	{
-		title: 'E-commerce store',
+		number: 2,
+		title: 'Kupaz.pl',
+		subtitle: 'E-commerce store',
 		description:`Implemented:
 
 		- Stripe API
@@ -53,19 +47,12 @@ const projects : ProjectInterface[] = [
 		imageSrc: '/images/kupaz.jpg',
 		imageWidth: 1334,
 		imageHeight: 2000,
-		buttons: [
-			{
-				title:'Website',
-				href:'https://kupaz.pl',
-			},
-			{
-				title:'Github',
-				href:'https://github.com/ivshiryaev/kupaz',
-			},
-		],
+		githubLink:'https://github.com/ivshiryaev/kupaz',
 	},
 	{
+		number: 1,
 		title: 'Landing page',
+		subtitle: 'karinavlasenko.com',
 		description:`Landing page for body psychologist.
 
 		Things i used:
@@ -78,16 +65,7 @@ const projects : ProjectInterface[] = [
 		imageSrc: '/images/karinaVlasenko.jpg',
 		imageWidth: 1179,
 		imageHeight: 2074,
-		buttons: [
-			{
-				title:'Website',
-				href:'https://karinavlasenko.com',
-			},
-			{
-				title:'Github',
-				href:'https://github.com/ivshiryaev/Karina-Vlasenko---Website',
-			},
-		],
+		githubLink: 'https://github.com/ivshiryaev/Karina-Vlasenko---Website',
 	},
 ]
 

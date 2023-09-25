@@ -1,17 +1,14 @@
-import React from 'react'
-
-type CardProps = {
+type Props = {
 	className?: string,
 	children: React.ReactNode,
 }
 
-function Card({children, className} : CardProps) {
+function Card({children, className} : Props) {
 	return (
 		<div
 			className={`
-				p-8
-				rounded-[2.25rem]
-				shadow-neumorphism-flat
+				w-full
+				rounded-[48px]
 				overflow-hidden
 				${className && className}
 			`}

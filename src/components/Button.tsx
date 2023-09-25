@@ -1,8 +1,6 @@
 "use client"
 
-import { plumpfullFont } from '@/app/fonts'
-
-import React from 'react'
+import Noise from '@/components/Noise'
 
 type ButtonProps = {
 	type?: 'button' | 'submit' | 'reset',
@@ -18,17 +16,25 @@ function Button({children, className, onClick, type, disabled} : ButtonProps) {
 			type={type}
 			onClick={onClick}
 			className={`
-				px-8 py-4
-				rounded-[2.25rem]
-				shadow-neumorphism-flat
-				active:shadow-neumorphism-inset
-				active:bg-concave
-				hover:bg-concave
-				${plumpfullFont.className}
+				dark:before:bg-purple
+				z-0
+				button-hover
+				relative
+				px-12 py-[36px]
+				flex justify-center items-center
+				cursor-pointer
+				rounded-[48px]
+				outline outline-2 outline-whiteText
+				transition-all
+				overflow-hidden
+				hover:text-darkText dark:hover:text-black
 				${className && className}
 			`}
-		>
-			{children}
+		>	
+			<Noise className='opacity-20 dark:opacity-10'/>
+			<span className='z-10'>
+				{children}
+			</span>
 		</button>
 	)
 }
