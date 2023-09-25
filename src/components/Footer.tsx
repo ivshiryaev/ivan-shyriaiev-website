@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Section from '@/components/Section'
 import Card from '@/components/Card'
 import Noise from '@/components/Noise'
@@ -17,12 +18,18 @@ function Footer() {
 			'>
 				<Noise className='opacity-50'/>
 				<div className='flex gap-1 text-[48px]'>
-					<span>
+					<Link 
+						href='/'
+						className='hover:scale-105'
+					>
 						<AiOutlineGithub/>
-					</span>
-					<span>
+					</Link>
+					<Link 
+						href='/'
+						className='hover:scale-105'
+					>
 						<AiFillLinkedin/>
-					</span>
+					</Link>
 				</div>
 				<div className='flex items-center justify-center flex-col gap-1'>
 					<p>©{year}. Ivan Shyriaiev.</p>

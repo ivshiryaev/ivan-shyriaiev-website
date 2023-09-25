@@ -13,11 +13,11 @@ function Hero() {
 				bg-yellow
 				flex flex-col 
 				justify-center items-center
-				gap-12
+				gap-4 lg:gap-12
 			'>
 				{/*Absolute Background Content*/}
 				<div className='
-					p-12
+					p-6 lg:p-12
 					absolute
 					w-full h-full
 					flex flex-col
@@ -31,7 +31,8 @@ function Hero() {
 					'>
 						<div className='
 							relative
-							w-[120px] h-[120px]
+							w-[90px] h-[90px]
+							lg:w-[120px] lg:h-[120px]
 						'>
 							<Image
 								className='object-fit'
@@ -42,7 +43,8 @@ function Hero() {
 						</div>
 						<div className='
 							relative
-							w-[120px] h-[120px]
+							w-[90px] h-[90px]
+							lg:w-[120px] lg:h-[120px]
 						'>
 							<Image
 								className='object-fit'
@@ -55,12 +57,15 @@ function Hero() {
 					{/*Bottom row*/}
 					<div className='
 						w-full h-full
-						flex justify-between 
+						flex 
+						justify-center sm:justify-between 
 						items-end
 					'>
 						<div className='
+							hidden sm:block
 							relative
-							w-[120px] h-[120px]
+							w-[90px] h-[90px]
+							lg:w-[120px] lg:h-[120px]
 						'>
 							<Image
 								className='object-fit'
@@ -74,12 +79,67 @@ function Hero() {
 						</div>
 					</div>
 				</div>
-				<Noise className='opacity-50'/>
+
+				<Noise className='opacity-75'/>
+
+				{/*RELATIVE Main text*/}
+				<div className='
+					flex flex-col 
+					justify-center items-center 
+				'>
+					{/*Small text*/}
+					<div className='
+						flex flex-col gap-1 
+						justify-center items-center
+						sm:hidden
+					'>
+						<p className='uppercase text-[100px] stroke-black-3px text-transparent'>Ivan</p>
+						<p className='uppercase text-[42px] stroke-black-2px text-transparent'>Shyriaiev</p>
+					</div>
+					{/*Large*/}
+					<div className='
+						flex flex-col 
+						justify-center items-center
+					'>
+						<span className='
+							hidden sm:block
+							uppercase
+							text-transparent
+							text-[50px] lg:text-[80px]
+							leading-[50px] lg:leading-[80px]
+							stroke-white-2px
+						'>
+							Ivan Shyriaiev
+						</span>
+						<h1 className='
+							hidden sm:block
+							uppercase
+							text-yellow
+							text-shadow-4px
+							text-[50px] lg:text-[80px]
+							leading-[50px] lg:leading-[80px]
+							relative
+							stroke-black-2px
+						'>
+							Ivan Shyriaiev
+						</h1>
+						<span className='
+							hidden sm:block
+							uppercase
+							text-transparent
+							text-[50px] lg:text-[80px]
+							leading-[50px] lg:leading-[80px]
+							stroke-white-2px
+						'>
+							Ivan Shyriaiev
+						</span>
+					</div>	
+				</div>
+
 				{/*Designer Developer*/}
 				<div className='
-					bottom-16
-					absolute
-					w-[400px]
+					sm:absolute sm:bottom-16
+					w-[280px] lg:w-[400px]
 					flex flex-col gap-1
 				'>
 					<div className='
@@ -90,24 +150,10 @@ function Hero() {
 						<span className='
 							z-10
 							uppercase
-							leading-[40px]
-							text-[40px]
-							stroke-white-2px
+							text-[24px] leading-[24px]
+							lg:leading-[36px] lg:text-[36px]
+							stroke-black-1px
 							text-yellow
-						'>
-							Designer
-						</span>
-						<span className='
-							z-0
-							blur-sm
-							uppercase
-							absolute
-							bg-clip-text
-							text-transparent
-							bg-gradient-to-r
-							from-pink-500 to-violet-500
-							leading-[40px]
-							text-[40px]
 						'>
 							Designer
 						</span>
@@ -120,65 +166,14 @@ function Hero() {
 						<span className='
 							z-10
 							uppercase
-							leading-[40px]
-							text-[40px]
-							stroke-white-2px
+							text-[24px] leading-[24px]
+							lg:leading-[36px] lg:text-[36px]
+							stroke-black-1px
 							text-yellow
 						'>
 							Developer
 						</span>
-						<span className='
-							z-0
-							blur-sm
-							uppercase
-							absolute
-							bg-clip-text
-							text-transparent
-							bg-gradient-to-r
-							from-pink-500 to-violet-500
-							leading-[40px]
-							text-[40px]
-						'>
-							Developer
-						</span>
 					</div>
-				</div>
-
-				{/*RELATIVE Main text*/}
-				<div className='
-					relative 
-					flex flex-col 
-					justify-center items-center 
-				'>
-					<span className='
-						uppercase
-						text-transparent
-						text-[80px]
-						leading-[80px]
-						stroke-white-3px
-					'>
-						Ivan Shyriaiev
-					</span>
-					<h1 className='
-						uppercase
-						text-yellow
-						text-shadow-4px
-						text-[80px]
-						leading-[80px]
-						relative
-						stroke-black
-					'>
-						Ivan Shyriaiev
-					</h1>
-					<span className='
-						uppercase
-						text-transparent
-						text-[80px]
-						leading-[80px]
-						stroke-white-3px
-					'>
-						Ivan Shyriaiev
-					</span>			
 				</div>
 			</Card>
 		</Section>

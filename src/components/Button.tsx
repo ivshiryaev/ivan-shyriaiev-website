@@ -1,6 +1,6 @@
 "use client"
 
-import React from 'react'
+import Noise from '@/components/Noise'
 
 type ButtonProps = {
 	type?: 'button' | 'submit' | 'reset',
@@ -16,14 +16,24 @@ function Button({children, className, onClick, type, disabled} : ButtonProps) {
 			type={type}
 			onClick={onClick}
 			className={`
+				z-0
+				button-hover
+				relative
 				px-12 py-[36px]
+				flex justify-center items-center
+				cursor-pointer
 				rounded-[48px]
 				outline outline-2 outline-whiteText
-				flex justify-center items-center
+				transition-all
+				overflow-hidden
+				hover:text-darkText
 				${className && className}
 			`}
-		>
-			{children}
+		>	
+			<Noise className='opacity-20'/>
+			<span className='z-10'>
+				{children}
+			</span>
 		</button>
 	)
 }

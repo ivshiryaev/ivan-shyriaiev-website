@@ -29,6 +29,7 @@ function Section({
 	return (
 		<section 
 			className={`
+				px-2 py-1
 				lg:px-4 lg:py-2
 				justify-center items-center
 				${className && className}

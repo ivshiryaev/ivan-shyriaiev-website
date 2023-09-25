@@ -5,6 +5,7 @@
 :root {
   --darkText: #232323;
   --whiteText: #F0F0F0;
+  --yellow: #FEFE35;
 }
 
 ::-webkit-scrollbar{
@@ -20,11 +21,38 @@
   border-radius: 10px;
 }
 
-.neumorphism-inset{
-	box-shadow: 8px 8px 10px 0px #DDD inset, -8px -8px 10px 0px #FFF inset;
+.button-hover{
+
 }
 
-.stroke-black{
+.button-hover::before{
+	border-radius: 50% 50% 0 0;
+	content: '';
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 0%;
+	background: var(--yellow);
+	transition: 0.300s;
+}
+.button-hover:hover::before{
+	border-radius: 0;
+	height: 150%;
+}
+
+.stroke-black-1px{
+	-webkit-text-stroke: 1px var(--darkText);
+}
+
+.stroke-black-2px{
+	-webkit-text-stroke: 2px var(--darkText);
+}
+
+.stroke-black-3px{
+	-webkit-text-stroke: 3px var(--darkText);
+}
+
+.stroke-black-4px{
 	-webkit-text-stroke: 4px var(--darkText);
 }
 

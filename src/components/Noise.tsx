@@ -4,6 +4,7 @@ function Noise({className} : {className?: string}) {
 	return (
 		<Image
 			className={`
+				pointer-events-none
 				absolute
 				w-full h-full
 				object-cover
@@ -12,6 +13,7 @@ function Noise({className} : {className?: string}) {
 			src='/textures/noise.png'
 			alt='noise texture'
 			fill
+			priority
 		/>
 	)
 }

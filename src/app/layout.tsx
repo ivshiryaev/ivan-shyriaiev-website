@@ -7,6 +7,7 @@ export const sequelFont = localFont({
 })
 
 import type { Metadata } from 'next'
+import Providers from './Providers'
 
 export const metadata: Metadata = {
   title: 'Ivan Shyriaiev.',
@@ -19,18 +20,21 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-        <body 
-            className={`
-                leading-none
-                text-whiteText
-                min-h-screen
-                bg-darkText
-                ${sequelFont.className}
-            `}
+    <>
+      <html lang="en" suppressHydrationWarning>
+        <body className={`
+            leading-none
+            text-whiteText
+            min-h-screen
+            bg-darkText
+            ${sequelFont.className}
+          `}
         >
+          <Providers>
             {children}
+          </Providers>
         </body>
-    </html>
+      </html>
+    </>
   )
 }
