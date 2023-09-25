@@ -11,7 +11,7 @@ function DarkBackground({className} : {className?: string}) {
 				object-cover
 				${className && className}
 			`}
-			src='/textures/DarkBackground.jpg'
+			src='/textures/darkBackground.jpg'
 			alt='noise texture'
 			fill
 			priority
