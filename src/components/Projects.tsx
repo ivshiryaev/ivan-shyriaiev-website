@@ -5,9 +5,9 @@ import Image from 'next/image'
 import { projects } from '@/constants'
 
 const cardClassNames=[
-	'bg-green text-whiteText',
-	'bg-yellow text-darkText',
-	'bg-blue text-whiteText',
+	'bg-green text-whiteText dark:bg-transparent',
+	'bg-whiteText text-darkText dark:bg-transparent dark:text-whiteText',
+	'bg-blue text-whiteText dark:bg-transparent',
 ]
 
 
@@ -19,6 +19,7 @@ function Projects() {
 		'>
 			{projects && projects.map((project,index) => (
 				<ProjectCard
+					key={index}
 					className={cardClassNames[index]}
 					number={project.number}
 					title={project.title}

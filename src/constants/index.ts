@@ -1,13 +1,13 @@
 interface ProjectInterface {
-	number?: number,
-	title?: string,
-	subtitle?: string,
-	description?: string,
-	website?: string,
-	imageSrc?: string,
-	imageWidth?: number,
-	imageHeight?: number,
-	githubLink?: string,
+	number: number,
+	title: string,
+	subtitle: string,
+	description: string,
+	website: string,
+	imageSrc: string,
+	imageWidth: number,
+	imageHeight: number,
+	githubLink: string,
 }
 
 const projects : ProjectInterface[] = [

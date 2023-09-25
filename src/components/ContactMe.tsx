@@ -13,13 +13,15 @@ import Section from '@/components/Section'
 import Card from '@/components/Card'
 import Button from '@/components/Button'
 import { BsGithub, BsLinkedin } from 'react-icons/bs'
-import Snackbar from '@mui/material/Snackbar';
 import { MdDone } from 'react-icons/md'
 import { BiLoaderAlt } from 'react-icons/bi'
 
+import Snackbar from '@mui/material/Snackbar';
 import Tooltip from '@mui/material/Tooltip';
+
 import { formSpreeUrl } from '@/constants'
 import Noise from '@/components/Noise'
+import DarkBackground from '@/components/DarkBackground'
 
 function ContactMe() {
 	const [isHidden, setIsHidden] = useState(true)
@@ -44,28 +46,30 @@ function ContactMe() {
 	const processSubmit: SubmitHandler<FormValidation> = async (data) => {
 		setIsSubmitting(true)
 
-		const promise = new Promise((resolve) => {
-			setTimeout(()=>{
-				resolve()
-			},3000)
-		})
+		// TESTING
 
-		await promise
-
-		// const response = await fetch(formSpreeUrl, {
-		// 	method: 'POST',
-		// 	body: JSON.stringify(data),
-		// 	headers: {
-		// 		'Accept': 'application/json',
-		// 	},
+		// const promise = new Promise((resolve) => {
+		// 	setTimeout(()=>{
+		// 		resolve()
+		// 	},2000)
 		// })
 
-		// if(response.ok){
-		// 	reset()
-		// 	setSnackbarOpen(true)
-		// } else {
-		// 	alert('Oops, there is something wrong happened 🤷‍')
-		// }
+		// await promise
+
+		const response = await fetch(formSpreeUrl, {
+			method: 'POST',
+			body: JSON.stringify(data),
+			headers: {
+				'Accept': 'application/json',
+			},
+		})
+
+		if(response.ok){
+			reset()
+			setSnackbarOpen(true)
+		} else {
+			alert('Oops, there is something wrong happened 🤷‍')
+		}
 
 		setSnackbarOpen(true)
 		setIsSubmitting(false)
@@ -93,7 +97,7 @@ function ContactMe() {
 							w-full h-[140%]
 							flex flex-col gap-1 
 							justify-center items-center
-							bg-yellow
+							bg-yellow dark:bg-transparent
 							hover:opacity-75
 							cursor-pointer
 							transition-all
@@ -108,11 +112,17 @@ function ContactMe() {
 						`}
 						onClick={()=>setIsHidden(false)}
 					>
-						<p className='text-darkText uppercase text-[36px]'>
-							//Contact Me
+						<DarkBackground/>
+						<p className='
+							relative 
+							text-[36px]
+							text-darkText dark:text-whiteText
+							uppercase 
+						'>
+							{'//Contact Me'}
 						</p>
-						<span className='text-darkText'>*Click</span>
-						<Noise className='opacity-100'/>
+						<span className='relative text-darkText dark:text-whiteText'>*Click</span>
+						<Noise className='opacity-100 dark:opacity-10'/>
 					</div>
 					<form 
 						className='
@@ -126,48 +136,73 @@ function ContactMe() {
 					>
 						<div className='flex grow flex-col gap-2 lg:gap-4'>
 							<div className='flex flex-col lg:flex-row gap-2 lg:gap-4'>
-								<div className='w-full flex flex-col gap-1'>
-									<input 
-										className='
-											focus:bg-grayDark
-											outline-none
-											bg-gray w-full rounded-[48px] p-12
-										' 
-										type="text"
-										placeholder='Name...'
-										{...register('name')}
-									/>
+								<div className='relative w-full flex flex-col gap-1'>
+									<div className='
+										relative rounded-[48px] overflow-hidden
+										flex flex-col justify-center items-center
+									'>
+										<input 
+											className='
+												focus:bg-grayDark
+												dark:focus:bg-gray
+												dark:bg-darkText
+												outline-none
+												bg-gray w-full rounded-[48px] p-12
+											' 
+											type="text"
+											placeholder='Name...'
+											{...register('name')}
+										/>
+										<Noise className='absolute opacity-20 dark:opacity-10'/>
+									</div>
 									{errors?.name?.message && <p className='text-sm text-rose-500'>{errors.name?.message}</p>}
 								</div>
 								<div className='w-full flex flex-col gap-1'>
-									<input 
-										className='
-											focus:bg-grayDark
-											outline-none
-											bg-gray w-full rounded-[48px] p-12
-										' 
-										type="email"
-										placeholder='Email...'
-										{...register('email')}
-									/>
+									<div className='
+										relative rounded-[48px] overflow-hidden
+										flex flex-col justify-center items-center
+									'>
+										<input 
+											className='
+												focus:bg-grayDark
+												dark:focus:bg-gray
+												dark:bg-darkText
+												outline-none
+												bg-gray w-full rounded-[48px] p-12
+											' 
+											type="email"
+											placeholder='Email...'
+											{...register('email')}
+										/>
+										<Noise className='absolute opacity-20 dark:opacity-10'/>
+									</div>
 									{errors?.email?.message && <p className='text-sm text-rose-500'>{errors.email?.message}</p>}
 								</div>
 							</div>
 							<div className='flex flex-col gap-1 justify-center items-center'>
-								<textarea 
-									className='
-										focus:bg-grayDark
-										outline-none
-										bg-gray w-full rounded-[48px] p-12
-									' 
-									placeholder='Message...'
-									rows={8}
-									{...register('message')}
-								/>
+								<div className='
+									w-full
+									relative rounded-[48px] overflow-hidden
+									flex flex-col justify-center items-center
+								'>
+									<textarea 
+										className='
+											focus:bg-grayDark
+											dark:focus:bg-gray
+											dark:bg-darkText
+											outline-none
+											bg-gray w-full rounded-[48px] p-12
+										' 
+										placeholder='Message...'
+										rows={8}
+										{...register('message')}
+									/>
+									<Noise className='absolute opacity-20 dark:opacity-10'/>
+								</div>
 								{errors?.message?.message && <p className='text-sm text-rose-500'>{errors.message?.message}</p>}
 							</div>
 						</div>
-						<Button className='flex-auto !outline-none !py-[48px] bg-green disabled:opacity-50' type='submit' disabled={isSubmitting}>
+						<Button className='flex-auto !outline-none !py-[48px] bg-green dark:bg-darkText disabled:opacity-50' type='submit' disabled={isSubmitting}>
 							{isSubmitting ? (
 								<span className='flex gap-2 justify-center items-center'>
 									<span className='animate-spin'><BiLoaderAlt/></span>
@@ -191,8 +226,17 @@ function ContactMe() {
 					vertical:'bottom',
 				}}
 			>
-				<div className='relative flex gap-2 justify-center items-center px-4 py-2 rounded-md shadow-md bg-green text-darkTextPrimary'>
-					<Noise className='opacity-50'/>
+				<div className='
+					overflow-hidden
+					relative 
+					flex gap-4 justify-center items-center 
+					px-[36px] py-[36px] 
+					rounded-[48px] 
+					shadow-md 
+					bg-green text-darkTextPrimary
+					dark:bg-purple
+				'>
+					<Noise className='opacity-20 dark:opacity-10'/>
 					<Image
 						priority
 						className='z-10 rounded-md'
@@ -201,7 +245,10 @@ function ContactMe() {
 						alt='Success image'
 						src='https://i.gifer.com/4BJW.gif'
 					/>
-					<span>Got your message, i will reply soon 😀</span>
+					<span>
+						Received your message 👌<br/>
+						i&apos;ll reply as soon as possible🙃
+					</span>
 				</div>
 			</Snackbar>
 		</>

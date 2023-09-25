@@ -1,7 +1,9 @@
 import './globals.css'
 
 import localFont from 'next/font/local'
-export const sequelFont = localFont({
+
+// @ts-ignore
+const sequelFont = localFont({
   src: './sequel.ttf',
   display: 'swap',
 })
@@ -14,7 +16,7 @@ export const metadata: Metadata = {
   description: 'Full stack developer.',
 }
 
-export default function RootLayout({
+function RootLayout({
   children,
 }: {
   children: React.ReactNode
@@ -23,6 +25,7 @@ export default function RootLayout({
     <>
       <html lang="en" suppressHydrationWarning>
         <body className={`
+            dark:bg-black
             leading-none
             text-whiteText
             min-h-screen
@@ -38,3 +41,5 @@ export default function RootLayout({
     </>
   )
 }
+
+export default RootLayout

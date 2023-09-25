@@ -4,7 +4,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Button from '@/components/Button'
 import { aboutMe } from '@/constants'
-import React from 'react'
 import Noise from '@/components/Noise'
 
 function AboutMe() {
@@ -13,18 +12,22 @@ function AboutMe() {
 			<Card className='
 				h-[500px]
 				relative
-				bg-purple
+				bg-purple dark:bg-black
 				flex flex-col gap-[36px]
 				justify-center
 				p-12
 			'>
-				<Noise className='opacity-20'/>
+				<Noise className='opacity-20 dark:opacity-10'/>
 				<h2 className='
+					w-fit
 					uppercase 
 					text-[24px] sm:text-[36px] 
 					leading-[24px] sm:leading-[36px]
+					text-whiteText
+					dark:text-transparent dark:bg-clip-text
+					dark:bg-gradient-to-r from-purple to-cyan-500
 				'>
-					//About me
+					{'//About me'}
 				</h2>
 				<p className='
 					text-[16px] sm:text-[20px] 
@@ -44,7 +47,7 @@ function AboutMe() {
 						href='/CV.pdf' 
 						download
 					>
-						<Button className='w-full sm:w-fit'>Download CV</Button>
+						<Button className='w-full sm:w-fit text-whiteText'>Download CV</Button>
 					</a>
 					<Link 
 						className='w-full sm:w-fit' 
@@ -54,7 +57,6 @@ function AboutMe() {
 						<Button className='w-full sm:w-fit'>Open CV</Button>
 					</Link>
 				</div>
-				<p className='dark:text-red-500'>Kek</p>
 			</Card>
 		</Section>
 	)

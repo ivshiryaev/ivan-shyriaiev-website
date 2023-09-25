@@ -16,6 +16,7 @@ function Button({children, className, onClick, type, disabled} : ButtonProps) {
 			type={type}
 			onClick={onClick}
 			className={`
+				dark:before:bg-purple
 				z-0
 				button-hover
 				relative
@@ -26,11 +27,11 @@ function Button({children, className, onClick, type, disabled} : ButtonProps) {
 				outline outline-2 outline-whiteText
 				transition-all
 				overflow-hidden
-				hover:text-darkText
+				hover:text-darkText dark:hover:text-black
 				${className && className}
 			`}
 		>	
-			<Noise className='opacity-20'/>
+			<Noise className='opacity-20 dark:opacity-10'/>
 			<span className='z-10'>
 				{children}
 			</span>
