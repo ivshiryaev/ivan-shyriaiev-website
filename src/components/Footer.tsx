@@ -3,6 +3,7 @@ import Section from '@/components/Section'
 import Card from '@/components/Card'
 import Noise from '@/components/Noise'
 import { AiOutlineGithub, AiFillLinkedin } from 'react-icons/ai'
+import GsapMagnetic from '@/components/animation/GsapMagnetic'
 
 function Footer() {
 	const year : number = new Date().getFullYear()
@@ -21,20 +22,22 @@ function Footer() {
 			'>
 				<Noise className='opacity-50 dark:opacity-10'/>
 				<div className='flex gap-1 text-[48px]'>
-					<Link 
-						href='https://github.com/ivshiryaev'
-						className='hover:scale-105'
-						target='_blank'
-					>
-						<AiOutlineGithub/>
-					</Link>
-					<Link 
-						href='https://www.linkedin.com/in/theshirya/'
-						className='hover:scale-105'
-						target='_blank'
-					>
-						<AiFillLinkedin/>
-					</Link>
+					<GsapMagnetic>
+						<Link 
+							href='https://github.com/ivshiryaev'
+							target='_blank'
+						>
+							<AiOutlineGithub/>
+						</Link>
+					</GsapMagnetic>
+					<GsapMagnetic>
+						<Link 
+							href='https://www.linkedin.com/in/theshirya/'
+							target='_blank'
+						>
+							<AiFillLinkedin/>
+						</Link>
+					</GsapMagnetic>
 				</div>
 				<div className='
 					leading-[16px]

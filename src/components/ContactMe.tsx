@@ -202,7 +202,7 @@ function ContactMe() {
 								{errors?.message?.message && <p className='text-sm text-rose-500'>{errors.message?.message}</p>}
 							</div>
 						</div>
-						<Button className='flex-auto !outline-none !py-[48px] bg-green dark:bg-darkText disabled:opacity-50' type='submit' disabled={isSubmitting}>
+						<Button className='flex-auto h-full !outline-none !py-[48px] disabled:opacity-50' type='submit' disabled={isSubmitting}>
 							{isSubmitting ? (
 								<span className='flex gap-2 justify-center items-center'>
 									<span className='animate-spin'><BiLoaderAlt/></span>

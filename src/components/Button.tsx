@@ -1,6 +1,6 @@
 "use client"
 
-import Noise from '@/components/Noise'
+import ButtonAnimation from '@/components/animation/ButtonAnimation'
 
 type ButtonProps = {
 	type?: 'button' | 'submit' | 'reset',
@@ -12,30 +12,27 @@ type ButtonProps = {
 
 function Button({children, className, onClick, type, disabled} : ButtonProps) {
 	return (
-		<button
-			type={type}
-			onClick={onClick}
-			className={`
-				dark:before:bg-purple
-				z-0
-				button-hover
-				relative
-				px-12 py-[36px]
-				flex justify-center items-center
-				cursor-pointer
-				rounded-[48px]
-				outline outline-2 outline-whiteText
-				transition-all
-				overflow-hidden
-				hover:text-darkText dark:hover:text-black
-				${className && className}
-			`}
-		>	
-			<Noise className='opacity-20 dark:opacity-10'/>
-			<span className='z-10'>
+		<ButtonAnimation>
+			<button
+				type={type}
+				onClick={onClick}
+				className={`
+					bg-transparent
+					relative
+					px-12 py-[36px]
+					rounded-[48px]
+					border border-2 border-whiteText
+					flex justify-center items-center
+					cursor-pointer
+					transition-all
+					overflow-hidden
+					hover:text-darkText dark:hover:text-black
+					${className && className}
+				`}
+			>	
 				{children}
-			</span>
-		</button>
+			</button>
+		</ButtonAnimation>
 	)
 }
 

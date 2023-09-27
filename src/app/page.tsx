@@ -13,7 +13,7 @@ export default function Home() {
                 fixed
                 z-30
                 top-2 right-2
-                lg:top-4 lg:right-4
+                lg:top-6 lg:right-6
             '>
                 <DarkModeToggle/>
             </aside>

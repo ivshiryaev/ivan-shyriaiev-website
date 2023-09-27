@@ -21,25 +21,6 @@
   border-radius: 10px;
 }
 
-.button-hover{
-
-}
-
-.button-hover::before{
-	border-radius: 50% 50% 0 0;
-	content: '';
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-	height: 0%;
-	background: var(--yellow);
-	transition: 0.300s;
-}
-.button-hover:hover::before{
-	border-radius: 0;
-	height: 150%;
-}
-
 .stroke-black-1px{
 	-webkit-text-stroke: 1px var(--darkText);
 }
