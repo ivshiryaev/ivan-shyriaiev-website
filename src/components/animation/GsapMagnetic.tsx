@@ -7,8 +7,8 @@ function GsapMagnetic({children}:{children: ReactNode}) {
 	const ref = useRef(null)
 
 	useEffect(()=>{
-		const xTo = gsap.quickTo(ref.current, 'x', {duration: 2, ease: 'elastic.out(1, 0,3)'})
-		const yTo = gsap.quickTo(ref.current, 'y', {duration: 2, ease: 'elastic.out(1, 0,3)'})
+		const xTo = gsap.quickTo(ref.current, 'x', {duration: 1, ease: 'elastic.out(1, 0,3)'})
+		const yTo = gsap.quickTo(ref.current, 'y', {duration: 1, ease: 'elastic.out(1, 0,3)'})
 
 		function mouseMove(e){
 			const { clientX, clientY } = e
