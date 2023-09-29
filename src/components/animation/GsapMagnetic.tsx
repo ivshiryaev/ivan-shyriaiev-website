@@ -3,20 +3,26 @@
 import gsap from 'gsap'
 import React, { useRef, useEffect } from 'react'
 
-function GsapMagnetic({children}:{children: ReactNode}) {
-	const ref = useRef(null)
+function GsapMagnetic({children}:{children: React.ReactNode}) {
+	const ref = useRef<HTMLElement | null>(null)
 
 	useEffect(()=>{
-		const xTo = gsap.quickTo(ref.current, 'x', {duration: 1, ease: 'elastic.out(1, 0,3)'})
-		const yTo = gsap.quickTo(ref.current, 'y', {duration: 1, ease: 'elastic.out(1, 0,3)'})
+		if(!ref.current) return ()=>{}
 
-		function mouseMove(e){
-			const { clientX, clientY } = e
-			const { width, height, left, top } = ref.current.getBoundingClientRect()
-			const x = clientX - (left + width / 2)	
-			const y = clientY - (top + height / 2)
-			xTo(x)
-			yTo(y)
+		const element = ref.current
+
+		const xTo = gsap.quickTo(element, 'x', {duration: 1, ease: 'elastic.out(1, 0,3)'})
+		const yTo = gsap.quickTo(element, 'y', {duration: 1, ease: 'elastic.out(1, 0,3)'})
+
+		function mouseMove(e: MouseEvent){
+			if(element){
+				const { clientX, clientY } = e
+				const { width, height, left, top } = element?.getBoundingClientRect()
+				const x = clientX - (left + width / 2)	
+				const y = clientY - (top + height / 2)
+				xTo(x)
+				yTo(y)
+			}
 		}
 
 		function mouseLeave(){
@@ -24,17 +30,21 @@ function GsapMagnetic({children}:{children: ReactNode}) {
 			yTo(0)
 		}
 
-		ref.current.addEventListener('mousemove', mouseMove)
-		ref.current.addEventListener('mouseleave', mouseLeave)
+			if(element){
+				element.addEventListener('mousemove', mouseMove as EventListener)
+				element.addEventListener('mouseleave', mouseLeave as EventListener)
+			}
 
 		return ()=> {
-			window.removeEventListener('mousemove', mouseMove)
-			window.removeEventListener('mousemove', mouseLeave)
+			if(element){
+				element.removeEventListener('mousemove', mouseMove as EventListener)
+				element.removeEventListener('mousemove', mouseLeave as EventListener)
+			}
 		}
 	},[])
 
 	return (
-		React.cloneElement(children, {ref})
+		React.cloneElement(children as React.ReactElement, {ref})
 	)
 }
 

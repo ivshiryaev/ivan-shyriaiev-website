@@ -7,7 +7,8 @@ import GsapMagnetic from '@/components/animation/GsapMagnetic'
 
 function ButtonAnimation({children} : {children: ReactNode}) {
 	const circleRef = useRef(null)
-	const timelineRef = useRef(null)
+	const timelineRef = useRef<null | gsap.core.Timeline>(null)
+
 
 	useEffect(() => {
 		timelineRef.current = gsap.timeline({paused: true})
@@ -26,11 +27,15 @@ function ButtonAnimation({children} : {children: ReactNode}) {
 	}, [])
 
 	function manageMouseEnter(){
-		timelineRef.current.tweenFromTo('enter', 'exit')
+		if(timelineRef.current){
+			timelineRef.current.tweenFromTo('enter', 'exit')
+		}
 	}
 
 	function manageMouseLeave(){
-		timelineRef.current.play()
+		if(timelineRef.current){
+			timelineRef.current.play()
+		}
 	}
 
 	return (
