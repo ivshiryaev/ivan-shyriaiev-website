@@ -46,8 +46,7 @@ function ContactMe() {
 	const processSubmit: SubmitHandler<FormValidation> = async (data) => {
 		setIsSubmitting(true)
 
-		// TESTING
-
+		// TESTING ->
 		// const promise = new Promise((resolve) => {
 		// 	setTimeout(()=>{
 		// 		resolve()
@@ -56,6 +55,7 @@ function ContactMe() {
 
 		// await promise
 
+		// PRODUCTION ->
 		const response = await fetch(formSpreeUrl, {
 			method: 'POST',
 			body: JSON.stringify(data),
@@ -243,7 +243,7 @@ function ContactMe() {
 						width={100}
 						height={100}
 						alt='Success image'
-						src='https://i.gifer.com/4BJW.gif'
+						src='/images/successImage.gif'
 					/>
 					<span>
 						Received your message 👌<br/>
