@@ -4,25 +4,11 @@ import Skills from '@/components/Skills'
 import AboutMe from '@/components/AboutMe'
 import ContactMe from '@/components/ContactMe'
 import Footer from '@/components/Footer'
-import DarkModeToggle from '@/components/DarkModeToggle'
 
 export default function Home() {
     return (
         <>
-            <aside className='
-                fixed
-                z-30
-                top-2 right-2
-                lg:top-6 lg:right-6
-            '>
-                <DarkModeToggle/>
-            </aside>
-            <main 
-                className={`
-                    py-1 lg:py-2
-                    flex flex-col justify-center
-                `}
-            >
+            <main>
                 <Hero/>
                 <AboutMe/>
                 <Projects/>

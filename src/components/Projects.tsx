@@ -8,14 +8,18 @@ const cardClassNames=[
 	'bg-green text-whiteText dark:bg-transparent',
 	'bg-whiteText text-darkText dark:bg-transparent dark:text-whiteText',
 	'bg-blue text-whiteText dark:bg-transparent',
+	'bg-purple text-whiteText dark:bg-transparent',
 ]
 
 
 function Projects() {
 	return (
 		<Section className='
-			flex gap-[8px] sm:gap-[16px]
-			flex-col sm:flex-row
+			grid 
+			grid-cols-1
+			sm:grid-cols-2
+			md:grid-cols-3
+			gap-[0.5rem] sm:gap-[1rem]
 		'>
 			{projects && projects.map((project,index) => (
 				<ProjectCard
@@ -33,3 +37,7 @@ function Projects() {
 }
 
 export default Projects
+
+// flex gap-[8px] sm:gap-[16px]
+// flex-col sm:flex-row
+// text-center

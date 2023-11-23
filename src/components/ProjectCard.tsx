@@ -1,9 +1,14 @@
+'use client'
+
 import Link from 'next/link'
 import Image from 'next/image'
 import Card from '@/components/Card'
 import { AiOutlineGithub } from 'react-icons/ai'
 import Noise from '@/components/Noise'
 import DarkBackground from '@/components/DarkBackground'
+
+import { useState } from 'react'
+import { motion } from 'framer-motion'
 
 interface Props{
 	number: number,
@@ -22,31 +27,40 @@ function ProjectCard({
 	website,
 	githubLink,
 } : Props) {
+	const [isHover, setIsHover] = useState(false)
+
 	return (
-		<Card className={`
-			relative
-			h-[300px]
-			transition
-			hover:drop-shadow-[0px_0px_4px_rgba(255,255,255,1)]
-			${className && className}
-		`}>
+		<Card 
+			className={`
+				grow
+				relative
+				h-[300px]
+				transition
+				text-center
+				hover:saturate-150
+				${className && className}
+			`}
+		>
 			<Image
-				className='
+				className={`
 					hidden dark:block
 					pointer-events-none
 					absolute
 					w-full h-full
 					object-cover
+					transition
 					${className && className}
-				'
+					${isHover ? 'scale-105 rotate-1' : ''}
+				`}
 				alt={title}
 				src={`/images/card${number}.jpg`}
 				fill
 			/>
 			<Noise className='opacity-50 dark:opacity-10'/>
-			<Link 
-				target='_blank'
-				href={website}
+			<Link
+				onMouseEnter={()=> setIsHover(true)}
+				onMouseLeave={()=>setIsHover(false)}
+				href={`/Project/${number}`}
 				className='
 					relative
 					w-full h-full

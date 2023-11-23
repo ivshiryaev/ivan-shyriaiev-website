@@ -1,6 +1,7 @@
 import './globals.css'
 
 import localFont from 'next/font/local'
+import DarkModeToggle from '@/components/DarkModeToggle'
 
 // @ts-ignore
 const sequelFont = localFont({
@@ -30,10 +31,20 @@ function RootLayout({
             text-whiteText
             min-h-screen
             bg-darkText
+            py-1 lg:py-2
+            flex flex-col justify-center
             ${sequelFont.className}
           `}
         >
           <Providers>
+            <aside className='
+                fixed
+                z-30
+                top-2 right-2
+                lg:top-6 lg:right-6
+            '>
+                <DarkModeToggle/>
+            </aside>
             {children}
           </Providers>
         </body>

@@ -26,7 +26,7 @@ function Button({children, className, onClick, type, disabled} : ButtonProps) {
 					cursor-pointer
 					transition-all
 					overflow-hidden
-					hover:text-darkText dark:hover:text-black
+					hover:text-darkBackground dark:hover:text-whiteText
 					${className && className}
 				`}
 			>	

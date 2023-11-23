@@ -13,7 +13,6 @@ const FormSchema = z.object({
 		.nonempty({message:'Write something.... ✍'})
 		.min(3, {message:'But more than 3 characters 🤨, i know you can do it better'})
 		.max(300, {message: `SOOOOOOOO much text, think about an environment, STOP WASTING LETTERS!!!`})
-		.endsWith('.',{message:'🤯 Maybe i am kinda annoying, but add a dot . at the end'})
 		.trim(),
 });
 

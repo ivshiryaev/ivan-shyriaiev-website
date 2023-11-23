@@ -26,7 +26,7 @@ function DarkModeToggle() {
 				transition
 				flex flex-col gap-1
 				justify-center items-center
-				${isDarkMode ? 'text-whiteText' : 'text-darkText'}
+				text-whiteText
 			`}>
 				<div 
 					className={`
