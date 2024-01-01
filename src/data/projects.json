@@ -1,0 +1,45 @@
+[
+	{
+		"number":0,
+		"title":"Kupaz.pl",
+		"subtitle":"E-commerce store",
+		"website": "https://kupaz.pl",
+		"githubLink": "https://github.com/ivshiryaev/kupaz",
+		"imageSrc": "/images/kupaz.jpg",
+		"imageWidth": 1334,
+		"imageHeight": 2000,
+		"description":"Website for Polish e-commerce specialized in tincture making kits.\n\nThe entire site is built on next.js 14\nData is stored in MongoDB, and payments are handled through Stripe Payments.\n\nMore detailed description:\n\n- The Shopping Cart is made with a React context provider, serving as a client-side component that displays information about cart items based on data retrieved from a database.\n\n- Payments are handled via custom logic written based on the stripe.com/api/documentation.\nEssentially, a new checkout.session created each time when a client clicks 'Pay' button in the shopping cart.\n\n- All the data about the products is retrieved from MongoDB.\n\n- Form validations are handled with React-Hook-Form and Zod.\n\n- Dynamic rendering for each product and dynamic SEO description based on the data retrieved from the MongoDB. \n\n- Human-readable, self - healing URLS.\n(Thanks to the https://mikebifulco.com/posts/self-healing-urls-nextjs-seo)\n\nIf you write the wrong url - it is not a problem:\nWrong url example: https://kupaz.pl/smaki/irisXh-2 - it will redirect you to the https://kupaz.pl/smaki/irish-2\n\n- Filtering functionality for products\nThe data from the <select> dropdown is \"reactive\" to the url params\n\n- Animations made with framer - motion\n\n- Swiper.js for photos"
+	},
+	{
+		"number":1,
+		"title":"Charity website",
+		"subtitle":"fundacjaobokciebie.com",
+		"website": "https://fundacjaobokciebie.com",
+		"imageSrc": "/images/threads.jpg",
+		"imageWidth": 1334,
+		"imageHeight": 2000,
+		"description":"Fundraising platform for charity foundation where users can discover all the fundraisers and see all the donations.\n\nWhat i made ?\n\n- The whole design (mobiles, tablets, laptops),\n- Front - end implementation,\n- Integrated Stripe Payments,\n- Connected MongoDB (all the Fundraisings data come from MongoDB),\n- Webhooks from Stripe (when someone donate, a new donation created in the MongoDB),\n- Display the latest donations for each fundraising,\n- Zod, React Hook Form to handle forms,\n- FormSpree to receive forms submissions,\n- Animations made with Framer - motion"
+	},
+	{
+		"number":2,
+		"title": "Threads app",
+		"subtitle": "Social network app",
+		"website": "https://threads-ivshiryaev.vercel.app/",
+		"imageSrc": "/images/threads.jpg",
+		"imageWidth": 1334,
+		"imageHeight": 2000,
+		"githubLink": "https://github.com/ivshiryaev/threads",
+		"description":"Social media app where you can create, comment, like threads, search for new friends and create communities 🤗\n\n(there is a 2-3 seconds delay after you perorm any action such as like search, etc... wait plz, serverless functions have to warm up a little 😥)\n\nMongoDB - store all the data. (Users, Threads, Likes, Communities)\nClerk - handling authorization and registration.\nUploadthing - uploading files. (User Profile Images)\nZod - form validation. (For Threads)\nSvix - to handle webhooks. (When the new community is created in Clerk, this community is duplicated in MongoDB)\nShadcn, Tailwind - ui.\n\nIf you want to check it out - you have to create an account\nDon't worry, i dont use/sell your personal data\n\nRegistration is handled via Clerk, the fastest way to register - is to use a 0Auth via Google/Facebook/GitHub"
+	},
+	{
+		"number": 3,
+		"title": "Landing page",
+		"subtitle": "karinavlasenko.com",
+		"website": "https://karinavlasenko.com",
+		"imageSrc": "/images/karinaVlasenko.jpg",
+		"imageWidth": 1179,
+		"imageHeight": 2074,
+		"githubLink": "https://github.com/ivshiryaev/Karina-Vlasenko---Website",
+		"description": "Simple landing page for a body psychologist.\n\nMy first 'serious' project haha 😁\nMade with plain HTML, CSS, JS\n\nThe whole website written in single index.html file :)\n(also there is a .script file with animations and utilities)\n\n- Bootstrap (SCSS/SASS)\n- HTML\n- JS\n\nI even implemented IntersectionObserverAPI and added animations, i remember when i did it, it was like a 'OMG i am so proud of myself, now Apple will hire me xDD'\n\nHosting on InfinityFree so you have to wait ~5 secs to open a website"
+	}
+]

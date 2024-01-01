@@ -2,7 +2,7 @@ import Section from '@/components/Section'
 import ProjectCard from '@/components/ProjectCard'
 import Button from '@/components/Button'
 import Image from 'next/image'
-import { projects } from '@/constants'
+import projects from '@/data/projects'
 
 const cardClassNames=[
 	'bg-green text-whiteText dark:bg-transparent',
@@ -10,7 +10,6 @@ const cardClassNames=[
 	'bg-blue text-whiteText dark:bg-transparent',
 	'bg-purple text-whiteText dark:bg-transparent',
 ]
-
 
 function Projects() {
 	return (

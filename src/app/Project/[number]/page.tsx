@@ -4,7 +4,7 @@ import Noise from '@/components/Noise'
 import Button from '@/components/Button'
 import Link from 'next/link'
 
-import { projects } from '@/constants'
+import projects from '@/data/projects'
 
 function Project({params} : {params: {number: number}}) {
 	const data = projects.find(project => project.number == params.number)
@@ -62,13 +62,15 @@ function Project({params} : {params: {number: number}}) {
 					>
 						<Button className='w-full sm:w-fit'>Website</Button>
 					</Link>
-					<Link 
-						className='w-full sm:w-fit' 
-						href={data.githubLink} 
-						target='_blank'
-					>
-						<Button className='w-full sm:w-fit'>Github</Button>
-					</Link>
+					{ data.githubLink &&
+						<Link 
+							className='w-full sm:w-fit' 
+							href={data.githubLink} 
+							target='_blank'
+						>
+							<Button className='w-full sm:w-fit'>Github</Button>
+						</Link>
+					}
 				</div>
 			</Card>
 		</Section>

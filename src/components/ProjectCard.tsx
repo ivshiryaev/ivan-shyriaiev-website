@@ -53,7 +53,7 @@ function ProjectCard({
 					${isHover ? 'scale-105 rotate-1' : ''}
 				`}
 				alt={title}
-				src={`/images/card${number}.jpg`}
+				src={`/images/card${number + 1}.jpg`}
 				fill
 			/>
 			<Noise className='opacity-50 dark:opacity-10'/>
@@ -69,18 +69,20 @@ function ProjectCard({
 				'
 			>
 				<div className='absolute top-8 left-8'>
-					..0{number}
+					..0{number + 1}
 				</div>
 				<p className='text-[30px]'>{title}</p>
 				<p>{subtitle}</p>
 			</Link>
-			<Link 
-				className='cursor-pointer absolute bottom-8 right-8 hover:scale-105'
-				href={githubLink}
-				target='_blank'
-			>
-				<span className='text-[48px]'><AiOutlineGithub /></span>
-			</Link>
+			{githubLink &&
+				<Link 
+					className='cursor-pointer absolute bottom-8 right-8 hover:scale-105'
+					href={githubLink}
+					target='_blank'
+				>
+					<span className='text-[48px]'><AiOutlineGithub /></span>
+				</Link>
+			}
 		</Card>
 	)
 }

@@ -26,6 +26,7 @@ function RootLayout({
     <>
       <html lang="en" suppressHydrationWarning>
         <body className={`
+            transition
             dark:bg-black
             leading-none
             text-whiteText
