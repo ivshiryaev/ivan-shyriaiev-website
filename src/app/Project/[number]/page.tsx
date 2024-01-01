@@ -4,7 +4,7 @@ import Noise from '@/components/Noise'
 import Button from '@/components/Button'
 import Link from 'next/link'
 
-import projects from '@/data/projects'
+import projects from '@/data/projects.json'
 
 function Project({params} : {params: {number: number}}) {
 	const data = projects.find(project => project.number == params.number)

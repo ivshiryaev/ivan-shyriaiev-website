@@ -16,7 +16,7 @@ interface Props{
 	title: string,
 	subtitle: string,
 	website: string,
-	githubLink: string,
+	githubLink?: string | undefined,
 }
 
 function ProjectCard({

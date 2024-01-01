@@ -33,9 +33,7 @@ function AboutMe() {
 					text-[16px] sm:text-[20px] 
 					leading-[16px] sm:leading-[20px]
 				'>
-					I am 23 years old.<br/>
-					Programmer / designer / musician.<br/>
-					Based in Poland, Gdańsk.
+					Detail-oriented front end developer with 1 year experience working with HTML, CSS, JS, React, Typescript. Highly adept at both independent and collaborative projects, with an emphasis on design and website development.
 				</p>
 				<div className='
 					flex
