@@ -14,6 +14,7 @@ function Noise({className} : {className?: string}) {
 			alt='noise texture'
 			fill
 			priority
+			quality={100}
 		/>
 	)
 }

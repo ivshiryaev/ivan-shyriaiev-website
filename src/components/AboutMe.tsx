@@ -10,12 +10,12 @@ function AboutMe() {
 	return (
 		<Section>
 			<Card className='
-				h-[500px]
+				lg:h-auto
 				relative
 				bg-purple dark:bg-black
 				flex flex-col gap-[36px]
 				justify-center
-				p-12
+				p-12 lg:p-16
 			'>
 				<Noise className='opacity-20 dark:opacity-10'/>
 				<h2 className='

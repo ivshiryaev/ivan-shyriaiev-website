@@ -7,12 +7,11 @@ function Skills() {
 		<Section>
 			<Card className='
 				dark:bg-black
-				h-[500px]
 				relative
 				bg-raspberry
 				flex flex-col gap-[36px]
 				justify-center
-				p-12
+				p-12 lg:p-16
 			'>
 				<Noise className='opacity-20 dark:opacity-10'/>
 				<h2 className='

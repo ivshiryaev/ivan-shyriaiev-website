@@ -49,6 +49,7 @@ function Footer() {
 					dark:bg-clip-text
 					dark:bg-gradient-to-r from-purple to-cyan-500
 				'>
+					<Link href='mailto:ivshiryaev1999@gmail.com'>ivshiryaev1999@gmail.com</Link>
 					<p>©{year}. Ivan Shyriaiev.</p>
 					<p>All Rights Reserved</p>
 				</div>
