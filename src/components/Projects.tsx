@@ -5,14 +5,7 @@ import Image from 'next/image'
 
 import projects from '@/data/projects.json'
 
-const cardClassNames=[
-	'bg-green text-whiteText dark:bg-transparent',
-	'bg-whiteText text-darkText dark:bg-transparent dark:text-whiteText',
-	'bg-blue text-whiteText dark:bg-transparent',
-	'bg-purple text-whiteText dark:bg-transparent',
-]
-
-function Projects() {
+export default function Projects() {
 	return (
 		<Section className='
 			grid 
@@ -24,20 +17,17 @@ function Projects() {
 			{projects && projects.map((project,index) => (
 				<ProjectCard
 					key={index}
-					className={cardClassNames[index]}
-					number={project.number}
+					className='bg-transparent text-whiteText'
+					number={index}
 					title={project.title}
 					subtitle={project.subtitle}
 					website={project.website}
 					githubLink={project.githubLink}
+					imageSrc={project.imageSrc}
+					isOld={project.isOld}
+					slug={project.slug}
 				/>
 			))}
 		</Section>
 	)
 }
-
-export default Projects
-
-// flex gap-[8px] sm:gap-[16px]
-// flex-col sm:flex-row
-// text-center

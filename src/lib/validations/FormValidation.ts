@@ -2,7 +2,8 @@ import * as z from "zod";
 
 const FormSchema = z.object({
 	name: z.string()
-		.min(1, {message: `At least 1 character required, unless you are Vendetta :)`})
+		.nonempty({message: 'I don\'t talk to strangers, tell me your name'})
+		.min(3, {message: `I don't trust people with names that are shorter than 3 letters`})
 		.max(30, {message: `Your name is longer than 30 letters, what ?! it was tough for you in the high school i think :(`})
 		.trim(),
 	email: z.string()

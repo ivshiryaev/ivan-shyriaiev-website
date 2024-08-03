@@ -17,6 +17,9 @@ interface Props{
 	subtitle: string,
 	website: string,
 	githubLink?: string | undefined,
+	imageSrc: string,
+	isOld?: boolean,
+	slug: string
 }
 
 function ProjectCard({
@@ -26,12 +29,17 @@ function ProjectCard({
 	subtitle,
 	website,
 	githubLink,
+	imageSrc,
+	isOld,
+	slug
 } : Props) {
 	const [isHover, setIsHover] = useState(false)
 
 	return (
 		<Card 
 			className={`
+				${isOld ? 'grayscale' : ''}
+								
 				grow
 				relative
 				h-[300px]
@@ -53,14 +61,14 @@ function ProjectCard({
 					${isHover ? 'scale-105 rotate-1' : ''}
 				`}
 				alt={title}
-				src={`/images/card${number + 1}.jpg`}
+				src={imageSrc}
 				fill
 			/>
 			<Noise className='opacity-50 dark:opacity-10'/>
 			<Link
 				onMouseEnter={()=> setIsHover(true)}
 				onMouseLeave={()=>setIsHover(false)}
-				href={`/Project/${number}`}
+				href={`/Project/${slug}`}
 				className='
 					relative
 					w-full h-full
