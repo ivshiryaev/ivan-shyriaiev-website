@@ -2,13 +2,13 @@
 	{
 		"slug":"kupaz",
 		"title":"E-commerce",
-		"subtitle":"kupaz.pl",
-		"website": "https://kupaz.pl",
+		"subtitle":"kupaz.xyz",
+		"website": "https://kupaz.xyz",
 		"githubLink": "https://github.com/ivshiryaev/kupaz",
 		"imageSrc": "/images/card1.jpg",
 		"imageWidth": 1334,
 		"imageHeight": 2000,
-		"description":"Website for Polish e-commerce specialized in tincture making kits.\n\nThe entire site is built on next.js 14\nData is stored in MongoDB, and payments are handled through Stripe Payments.\n\n The Shopping Cart is made with a React context provider, serving as a client-side component that displays information about cart items based on data retrieved from a database.\n\n- Payments are handled via custom logic written based on the stripe.com/api/documentation.\nEssentially, a new checkout.session created each time when a client clicks 'Pay' button in the shopping cart.\n\n- All the data about the products is retrieved from MongoDB.\n\n- Form validations are handled with React-Hook-Form and Zod.\n\n- Dynamic rendering for each product and dynamic SEO description based on the data retrieved from the MongoDB. \n\n- Human-readable, self - healing URLS.\n(Thanks to the https://mikebifulco.com/posts/self-healing-urls-nextjs-seo)\n\nIf you write the wrong url - it is not a problem:\nWrong url example: https://kupaz.pl/smaki/irisXh-2 - it will redirect you to the https://kupaz.pl/smaki/irish-2\n\n- Filtering functionality for products\nThe data from the <select> dropdown is \"reactive\" to the url params\n\n- Animations made with framer - motion\n\n- Swiper.js for photos"
+		"description":"Website for Polish e-commerce specialized in tincture making kits.\n\nThe entire site is built on next.js 14\nData is stored in MongoDB, and payments are handled through Stripe Payments.\n\n The Shopping Cart is made with a React context provider, serving as a client-side component that displays information about cart items based on data retrieved from a database.\n\n- Payments are handled via custom logic written based on the stripe.com/api/documentation.\nEssentially, a new checkout.session created each time when a client clicks 'Pay' button in the shopping cart.\n\n- All the data about the products is retrieved from MongoDB.\n\n- Form validations are handled with React-Hook-Form and Zod.\n\n- Dynamic rendering for each product and dynamic SEO description based on the data retrieved from the MongoDB. \n\n- Human-readable, self - healing URLS.\n(Thanks to the https://mikebifulco.com/posts/self-healing-urls-nextjs-seo)\n\nIf you write the wrong url - it is not a problem:\nWrong url example: https://kupaz.xyz/smaki/irisXh-2 - it will redirect you to the https://kupaz.xyz/smaki/irish-2\n\n- Filtering functionality for products\nThe data from the <select> dropdown is \"reactive\" to the url params\n\n- Animations made with framer - motion\n\n- Swiper.js for photos"
 	},
 	{
 		"slug":"fundacjaobokciebie",
